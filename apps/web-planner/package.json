@@ -1,9 +1,9 @@
 {
-  "name": "web-template",
+  "name": "web-planner",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "_scripts": {
+  "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"

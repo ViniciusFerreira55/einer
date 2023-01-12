@@ -15,7 +15,7 @@ function HomePage() {
 
   return (
     <div className="bg-indigo-900 flex flex-col justify-center items-center h-screen text-white gap-3">
-      <h1 className="text-3xl font-bold">Just a Web Template</h1>
+      <h1 className="text-3xl font-bold">Planner</h1>
       <ButtonWebTemplate>Boop</ButtonWebTemplate>
       <Link to="/about">
         <h2 className="underline">Go to about page</h2>
