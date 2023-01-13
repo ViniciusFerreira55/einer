@@ -2,21 +2,48 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ]
     },
     "lint": {
       "outputs": []
     },
     "dev": {
       "cache": false
+    },
+    "mock": {
+      "cache": false
+    },
+    "generate": {
+      "cache": false
+    },
+    "db-push": {
+      "cache": false
+    },
+    "docs": {
+      "cache": false
     }
   },
   "globalEnv": [
+    "ON_DOCKER",
     "SERVICE_AUTH_PORT",
     "DATABASE_REDIS_URL",
+    "VITE_SERVICE_AUTH_URL",
     "VITE_WEB_TEMPLATE_PORT",
-    "VITE_WEB_COMMON_PORT"
+    "VITE_WEB_TEMPLATE_URL",
+    "VITE_WEB_COMMON_PORT",
+    "VITE_WEB_COMMON_URL",
+    "SERVICE_SERVER_TEMPLATE_PORT",
+    "SERVICE_SERVER_TEMPLATE_URL",
+    "SERVICE_S3_PORT",
+    "VITE_SERVICE_S3_URL",
+    "VITE_MOCK_PORT",
+    "VITE_MOCK_URL"
   ],
   "globalDependencies": [
     ".env"

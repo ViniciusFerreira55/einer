@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  session_db:
+    image: redis:latest
+    restart: always
+    ports:
+      - 6000:6000
+    command: redis-server --save 20 1 --port 6000 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - db:/var/lib/redis
+volumes:
+  db:
+    driver: local

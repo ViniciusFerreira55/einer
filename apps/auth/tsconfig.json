@@ -1,0 +1,11 @@
+{
+  "extends": "tsconfig/server.json",
+  "compilerOptions": {
+    "declarationMap": false,
+    "declaration": false,
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["./src/*"]
+    }
+  }
+}

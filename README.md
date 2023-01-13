@@ -9,7 +9,7 @@
 <h3 align="center">Main app's Monorepository.</h3>
 
 <h4 align="center">
-  <a href="https://docs-einer.vercel.app/pt/bem-vindo">Project's Documentation</a>
+  <!-- <a href="https://docs-einer.vercel.app/pt/bem-vindo">Project's Documentation</a> -->
 </h4>
 
 <!-- <p align="center">
@@ -46,11 +46,22 @@ All progress tracking will be made in [ClickUp](https://clickup.com/)
 
 ### Docs
 
-<a href="https://docs-einer.vercel.app/pt/bem-vindo">Project's Documentation</a>
+Docs are now in this repository inside the `docs` folder, powered by [Docusaurus](https://docusaurus.io/).
+
+To access it locally, you can run:
+
+```sh
+# certify that you are in the repository root directory
+$ pnpm run docs
+
+# If you are running the docusaurus inside a docker, run this instead
+$ pnpm run docs -- --host 0.0.0.0
+```
 
 ### Aplications Ports
 
 We decided to define our convetion in the following way:
+
 - Web Apps (vite): 3000
 - Web App services: 4000
 - Common Services: 5000
@@ -59,29 +70,26 @@ We decided to define our convetion in the following way:
 
 So for all our applications the port mapping is:
 
-| App | Port |
-| ----------- | ----------- |
-| Web Common | 3000 |
-| Web Borum | 3001 |
+| App         | Port |
+| ----------- | ---- |
+| Web Common  | 3000 |
+| Web Borum   | 3001 |
 | Web Planner | 3002 |
-| Web VSDIA | 3003 |
+| Web VSDIA   | 3003 |
 
-
-| Services | Port |
-| ----------- | ----------- |
-| Service Borum | 4001 |
-| Service Planner | 4002 |
-| Service VSDIA | 4003 |
-| Service Authentication | 5000 |
+| Services                  | Port |
+| ------------------------- | ---- |
+| Service Borum             | 4001 |
+| Service Planner           | 4002 |
+| Service VSDIA             | 4003 |
+| Service Authentication    | 5000 |
 | Service S3 (File Storage) | 5001 |
 
-| Databases | Port |
-| ----------- | ----------- |
+| Databases            | Port |
+| -------------------- | ---- |
 | Authentication Redis | 6000 |
 
 ## Getting Started
-
-All important features and requisites are defined [in the documentation website](https://docs-einer.vercel.app/pt/bem-vindo).
 
 ### Prerequisites
 
@@ -90,9 +98,15 @@ Since this is an monorepo app using Turbo, these two dependencies is required to
 - [Node.js](https://nodejs.org/en/)
 - [pnpm](https://pnpm.io/)
 
+  Or
+
+- [Docker](https://www.docker.com/) installed on your machine
+
 ### Installing and Running
 
-Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services.
+#### Bare metal
+
+If you want to run in bare metal, make sure you have the prerequisites and then you can just execute the following steps:
 
 ```bash
 # Clone this repository
@@ -101,8 +115,55 @@ $ git clone https://github.com/ets-einer/einer
 # Go into the repository
 $ cd einer
 
-# Install all dependencies
+# Copy the .env.dev file into .dev
+$ cp .env.dev .env
+
+# Install all necessary deps
 $ pnpm install
+
+# Push all database migrations
+$ pnpm db-push
+
+# Setup prisma orm client
+$ pnpm generate
+
+# Run the dev script
+$ pnpm run dev
+```
+
+#### Docker
+
+One of the benefits of docker is that you can run anywhere.
+
+Make sure you have docker and docker-compose installed on your machine, then you can follow these steps:
+
+```sh
+# Clone this repository
+$ git clone https://github.com/ets-einer/einer
+
+# Go into the repository
+$ cd einer
+
+# Build the images using the docker-compose.dev.yml file
+$ docker compose -f docker-compose.dev.yml up -d
+
+# Make sure einer-einer-dev-1 is running
+$ docker ps # list all running containers, see if you find einer-einer-dev-1
+
+# Enter inside your docker using bash
+$ docker exec -it einer-einer-dev-1 bash
+
+# Copy the .env.dev file into .dev
+$ cp .env.dev .env
+
+# Install all necessary deps
+$ pnpm install
+
+# Push all database migrations
+$ pnpm db-push
+
+# Setup prisma orm client
+$ pnpm generate
 
 # Run the dev script
 $ pnpm run dev
@@ -146,5 +207,6 @@ Inspiration, code snippets, etc.
 
 ---
 
-> [docs-einer](https://docs-einer.vercel.app/) &nbsp;&middot;&nbsp;
+<!-- > [docs-einer](<insert-new-url-here>) &nbsp;&middot;&nbsp; -->
+
 > GitHub [@ets-einer](https://github.com/ets-einer)
