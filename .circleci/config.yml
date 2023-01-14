@@ -17,8 +17,9 @@ jobs:
           command: npm i -g pnpm
       - checkout
       - node/install-packages:
+          with-cache: false
           override-ci-command: pnpm i
-          cache-path: ~/.pnpm-store
+          # cache-path: ~/.pnpm-store
       - run:
           command: pnpm build
       - run:
