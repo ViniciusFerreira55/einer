@@ -1,19 +1,24 @@
 version: 2.1
+
 orbs:
   node: circleci/node@5.0.2
+
 workflows:
   test:
     jobs:
       - test
+
 jobs:
   test:
     docker:
       - image: cimg/node:lts
     steps:
-      - checkout
-      - node/install-packages
       - run:
           command: npm i -g pnpm
+      - checkout
+      - node/install-packages:
+          override-ci-command: pnpm i
+          cache-path: ~/.pnpm-store
       - run:
           command: pnpm build
       - run:
