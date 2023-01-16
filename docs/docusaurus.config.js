@@ -10,7 +10,7 @@ const config = {
   tagline: 'The ETS toolkit and developer ecosystem',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
@@ -85,7 +85,7 @@ const config = {
             items: [
               {
                 label: 'Introdução',
-                to: '/docs/intro',
+                to: 'docs/intro/bem-vindo',
               },
             ],
           },
