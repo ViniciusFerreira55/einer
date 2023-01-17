@@ -21,6 +21,10 @@ jobs:
           override-ci-command: pnpm i
           # cache-path: ~/.pnpm-store
       - run:
+          command: pnpm db-push
+          environment:
+            DATABASE_URL: file:./dev.db 
+      - run:
           command: pnpm build
       - run:
           command: pnpm test
