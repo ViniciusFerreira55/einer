@@ -47,7 +47,9 @@
     "SERVICE_S3_PORT",
     "VITE_SERVICE_S3_URL",
     "VITE_MOCK_PORT",
-    "VITE_MOCK_URL"
+    "VITE_MOCK_URL",
+    "VITE_WEB_BORUM_PORT",
+    "SERVICE_BORUM_PORT"
   ],
   "globalDependencies": [
     ".env"
