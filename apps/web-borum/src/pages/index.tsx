@@ -12,7 +12,7 @@ function HomePage() {
   if (isLoading) return <Spinner />;
 
   if (isError) return <div>Error!</div>;
-
+  
   return (
     <div className="bg-indigo-900 flex flex-col justify-center items-center h-screen text-white gap-3">
       <h1 className="text-3xl font-bold">Borum App</h1>

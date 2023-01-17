@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "fsr";
 import { Spinner } from "ui";
 import { trpc } from "../utils/trpc";
-
 export default function AboutPage() {
   const helloQuery = useQuery(
     ["protectedHello"],
@@ -11,7 +10,6 @@ export default function AboutPage() {
         number: 40,
       })
   );
-
   return (
     <div className="bg-slate-900 flex flex-col justify-center items-center h-screen text-white gap-3">
       <div className="font-bold">Nothing here lmao</div>
@@ -21,7 +19,7 @@ export default function AboutPage() {
         rel="noreferrer"
         className="font-black text-xl underline"
       >
-        Just please do not click this link
+        Just please CLICK this link
       </a>
       <Link to="/">
         <p className="underline">Get back to Home Page</p>
