@@ -23,7 +23,7 @@ export const createContext: ({
   res,
 }: trpcExpress.CreateExpressContextOptions) => Promise<
   CreateContextOk | CreateContextErr
-> = async ({ req, res }: trpcExpress.CreateExpressContextOptions) => {
+> = async ({ req, res: _res }: trpcExpress.CreateExpressContextOptions) => {
   console.log("COOKIES:", req.cookies)
   try {
     const res = await axios.post(authUrl, { sessionId: req.cookies.sessionId });
