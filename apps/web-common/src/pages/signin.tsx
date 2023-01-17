@@ -25,7 +25,7 @@ export default function SignInPage() {
     ["signIn"],
     signOut,
     {
-      onSuccess: (res) => {
+      onSuccess: (_res) => {
         // TODO: Notify user
         const callBackUrl = searchParams.get("callbackUrl");
         if (callBackUrl) {

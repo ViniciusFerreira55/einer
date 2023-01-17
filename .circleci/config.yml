@@ -1,0 +1,30 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.0.2
+
+workflows:
+  test:
+    jobs:
+      - test
+
+jobs:
+  test:
+    docker:
+      - image: cimg/node:lts
+    steps:
+      - run:
+          command: npm i -g pnpm
+      - checkout
+      - node/install-packages:
+          with-cache: false
+          override-ci-command: pnpm i
+          # cache-path: ~/.pnpm-store
+      - run:
+          command: pnpm db-push
+          environment:
+            DATABASE_URL: file:./dev.db 
+      - run:
+          command: pnpm build
+      - run:
+          command: pnpm test

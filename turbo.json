@@ -10,6 +10,10 @@
         ".next/**"
       ]
     },
+    "test": {},
+    "test:watch": {
+      "cache": false
+    },
     "lint": {
       "outputs": []
     },
@@ -45,7 +49,9 @@
     "VITE_MOCK_PORT",
     "VITE_MOCK_URL",
     "VITE_WEB_PLANNER_PORT",
-    "SERVICE_PLANNER_PORT"
+    "SERVICE_PLANNER_PORT",
+    "VITE_WEB_BORUM_PORT",
+    "SERVICE_BORUM_PORT"
   ],
   "globalDependencies": [
     ".env"
