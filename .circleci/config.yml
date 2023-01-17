@@ -22,6 +22,8 @@ jobs:
           # cache-path: ~/.pnpm-store
       - run:
           command: pnpm db-push
+          environment:
+            DATABASE_URL: file:./dev.db 
       - run:
           command: pnpm build
       - run:
