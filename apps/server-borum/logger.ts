@@ -14,4 +14,4 @@ export class Logger {
   }
 }
 
-export const logger = new Logger("SERVER-TEMPLATE");
+export const logger = new Logger("BORUM");
