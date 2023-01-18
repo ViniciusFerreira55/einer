@@ -1,12 +1,13 @@
 ---
 title: Git e Github
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 ## Tutoriais básicos de Git e Github:
 
-- https://www.youtube.com/watch?v=hwP7WQkmECE
-- https://www.youtube.com/watch?v=8lGpZkjnkt4
+- [Git Explained in 100 Seconds](https://www.youtube.com/watch?v=hwP7WQkmECE)
+- [GitHub Pull Request in 100 Seconds](https://www.youtube.com/watch?v=8lGpZkjnkt4)
+- [Understanding Git through images](https://dev.to/nopenoshishi/understanding-git-through-images-4an1)
 
 ## Git flow e convenções
 
@@ -20,7 +21,7 @@ Por exemplo, suponhamos que o um desenvolvedor iniciante chamado João Doe estej
 
 Conforme João esteja trabalhando nessa feature, é interessante que ele "salve" as alterações durante o desenvolvimento que funcionam no código dele.
 
-Exemplo, João começa a adicionar os elementos HTML como o `<input />` e o  `<form><form>`, quando ele ver que os elementos HTML estão funcionando bem, ele pode dar um commit na forma:
+Exemplo, João começa a adicionar os elementos HTML como o `<input />` e o `<form><form>`, quando ele ver que os elementos HTML estão funcionando bem, ele pode dar um commit na forma:
 
 ```bash
 $ git commit -m "add: html form for login page"
@@ -70,5 +71,3 @@ In this commit I fixed a typo in the documentation.
 
 Co-authored-by: AUTHOR-NAME <ANOTHER-NAME@EXAMPLE.COM>
 ```
-
-
