@@ -21,7 +21,7 @@ Após isso, podemos partir para ferramentas utilizadas em nosso processo de dese
 
 Ferramentas utilizadas em todas as aplicações
 
-- Jest como framework de testes
+- Vitest como framework de testes
 - Docusarus como documentação de desenvolvimento de projeto e diário de bordo.
 - pnpm como substituto do npm ([veja aqui as principais vantagens](https://www.youtube.com/watch?v=WVnsM7Mp3JM))
 - Turborepo sistema de build para todas as aplicações presentes no monorepositório
